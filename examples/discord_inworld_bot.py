@@ -6,7 +6,8 @@ CONFIG = {
     "inworld-key" : "",
     "inworld-secret" : "",
     "inworld-scene" : "",
-    "bot-token" : ""
+    "bot-token" : "",
+    "bot-command" : ""
 }
 
 # Create a new Intents object with default settings
@@ -25,11 +26,9 @@ chat_app = inworld_chat.InWorldChat(CONFIG["inworld-key"], CONFIG["inworld-secre
 # Set up the InWorldChat object
 chat_app.setup()
 
-@bot.command()
-async def bot_name(ctx, *, query):
+@bot.command(name=CONFIG["bot-command"])
+async def inworld_command(ctx, *, query):
     """
-    This function defines the 'bot_name' command for the bot.
-    I recommend changing it to whichever command you want to use to trigger your bot
     The message content is then sent as a reply in Discord.
 
     :param ctx: context object provided by discord.py, contains message details
