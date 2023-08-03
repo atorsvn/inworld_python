@@ -26,10 +26,10 @@ chat_app = inworld_chat.InWorldChat(CONFIG["inworld-key"], CONFIG["inworld-secre
 chat_app.setup()
 
 @bot.command()
-async def iw(ctx, *, query):
+async def bot_name(ctx, *, query):
     """
-    This function defines the 'iw' command for the bot.
-    When the 'iw' command is used, the bot sends a chat message using the InWorldChat object.
+    This function defines the 'bot_name' command for the bot.
+    I recommend changing it to whichever command you want to use to trigger your bot
     The message content is then sent as a reply in Discord.
 
     :param ctx: context object provided by discord.py, contains message details
