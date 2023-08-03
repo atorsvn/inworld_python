@@ -20,7 +20,7 @@ intents.message_content = True
 bot = commands.Bot(command_prefix="!", intents=intents)
 
 # Create an InWorldChat object with the specified key, secret, and scene
-chat_app = inworld_chat.InWorldChat('CONFIG["inworld-key"], CONFIG["inworld-secret"], CONFIG["inworld-scene"])
+chat_app = inworld_chat.InWorldChat(CONFIG["inworld-key"], CONFIG["inworld-secret"], CONFIG["inworld-scene"])
 
 # Set up the InWorldChat object
 chat_app.setup()
