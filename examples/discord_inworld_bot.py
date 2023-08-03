@@ -2,6 +2,13 @@ import discord
 from discord.ext import commands
 from inworld_python import inworld_chat
 
+CONFIG = {
+    "inworld-key" : "",
+    "inworld-secret" : "",
+    "inworld-scene" : "",
+    "bot-token" : ""
+}
+
 # Create a new Intents object with default settings
 # These settings include tracking of messages, reactions, etc.
 intents = discord.Intents.default()
@@ -13,7 +20,7 @@ intents.message_content = True
 bot = commands.Bot(command_prefix="!", intents=intents)
 
 # Create an InWorldChat object with the specified key, secret, and scene
-chat_app = inworld_chat.InWorldChat('inworld_key', 'inworld_secret', 'inworld_scene')
+chat_app = inworld_chat.InWorldChat('CONFIG["inworld-key"], CONFIG["inworld-secret"], CONFIG["inworld-scene"])
 
 # Set up the InWorldChat object
 chat_app.setup()
@@ -42,4 +49,4 @@ async def on_ready():
     print('Bot is ready')
 
 # Run the bot with the specified token
-bot.run('your-bot-token')
+bot.run(CONFIG["bot-token"])
